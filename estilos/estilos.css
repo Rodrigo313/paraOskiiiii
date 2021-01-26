@@ -1,0 +1,23 @@
+.verdeDerecha{
+    color: green;
+    text-align: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.rojoFantasy{
+    color: red;
+    font-family: fantasy;
+    list-style: square;
+}
+
+.amarilloCentrado{
+    color: yellow;
+    background-color: black;
+    text-align: center;
+}
+
+.rosaCentrado{
+    color: pink;
+    background-color: darkgreen;
+    text-align: center;
+}

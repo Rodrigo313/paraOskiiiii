@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propósitos de año nuevo</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="estilos/estilos.css" type="text/css">
+    <script src="scripts/mostrarLista.js"></script>
+</head>
+<body>
+    <div id="lista">
+        <h1>{{titulo}}</h1>
+        <ul v-if="propositos.length > 0">
+            <li v-for="(proposito, index) in propositos" :key="index" v-on:dblclick="borrar(index,1)">
+                <input type="checkbox" v-model="proposito.hecho">
+                <del v-if="proposito.hecho==true">{{proposito.texto}}</del>
+                <span v-else-if>{{proposito.texto}}</span>
+            </li>
+        </ul>
+        <h3 v-else-if>{{textoVacio}}</h3>
+        <input type="text" v-model="nuevoProp">
+        <input type="button" value="Añadir" v-on:click="anadir()"><br><br>
+        <input type="button" value="Borrar propósitos" v-on:click="borrarTodos()">
+        <lista-propositos :hecho-prop="hecho" :texto-prop="texto"></lista-propositos>
+    </div>
+    <script>
+        const mountedApp = lista.mount("#lista");
+    </script>
+</body>
+</html>
